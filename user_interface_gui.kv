@@ -1,0 +1,196 @@
+Screen:
+    id: vehicleshop_screen
+    name: 'vehicle_shop_screen'
+    MDCard:
+        size_hint: 1, 1
+        orientation: 'vertical'
+
+        BoxLayout:
+            id: baselayout
+            orientation: 'vertical'
+            size_hint: 1, 1
+
+            BoxLayout:
+                id: container
+                orientation: 'horizontal'
+                size_hint: 1, 1
+
+                BoxLayout:
+                    id: first_layout_container
+                    size_hint: 0.7, 1
+                    orientation: 'vertical'
+                    padding: 10
+                    
+                    BoxLayout:
+                        id: first_box_layout
+                        size_hint: 1, 0.5
+                        orientation: 'horizontal'
+                        padding: 10
+
+                    BoxLayout:
+                        id: second_box_layout
+                        size_hint: 1, 0.5
+                        orientation: 'horizontal'
+                        padding: 10
+                
+                MDBoxLayout: 
+                    orientation: 'vertical'
+                    size_hint: 0.3, 1
+                    padding: 20
+                    spacing: 20
+
+                    # BoxLayout:
+                    #     id: buttons_container
+                    #     orientation: 'vertical'
+                    #     size_hint: 1, 0.1
+                    #     # spacing: dp(10)
+                    #     # padding: dp(20) 
+
+                    MDCard:
+                        id: button_layout
+                        orientation: 'vertical'
+                        elevation: 1
+                        size_hint: 1, 0.1
+                        spacing: 20
+                        
+                        BoxLayout:
+                            orientation: 'horizontal'
+                            size: .5, .5
+                            padding: 0,0,0,3
+                            size_hint_y : None
+                            size_hint_x : None
+                            pos_hint:{"right":0.1}
+
+                            Button:
+                                id: add_button
+                                text: "Add"
+                                size_hint: None, None
+                                size: 100, 50
+                                background_color: 0, 0.9, 0.9, 1
+                                on_release: app.add_order()
+                            
+                            Button:
+                                id: order_button
+                                text: "Order"
+                                size_hint: None, None
+                                size: 100, 50
+                                background_color: 0, 0.9, 0.9, 1
+                                on_release: app.calculate_amount()
+
+                            Button:
+                                id: refresh_button
+                                text: "Refresh"
+                                size_hint: None, None
+                                size: 100, 50
+                                background_color: 0.682, 0.659, 0.827, 1
+                                on_release: app.app_refresh()
+
+
+                    MDCard:
+                        orientation: 'vertical'
+                        elevation: 1
+                        padding: "16dp"
+                        size_hint: None, None
+                        size: "370dp", "570dp"
+
+                        MDLabel:
+                            id: invoice
+                            text: ""
+                            valign: 'center'
+                            halign: 'center'
+                    
+                    # MDCard:
+                        # orientation: 'vertical'
+                        # elevation: 1
+                        # padding: "16dp"
+                        # size_hint: None, None
+                        # size: "370dp", "570dp"
+
+                        # BoxLayout:
+                        #     orientation: 'vertical'
+                        #     spacing: "8dp"
+                        #     size_hint_y: None
+                        #     height: self.minimum_height
+
+                        #     MDLabel:
+                        #         text: "Vehicles Shop"
+                        #         halign: 'center'
+                        #         font_style: 'H6'
+
+                        #     Widget:
+                        #         size_hint_y: None
+                        #         height: "2dp"
+                        #         canvas:
+                        #             Color:
+                        #                 rgba: 0, 0, 0, 1
+                        #             Line:
+                        #                 points: self.x, self.y, self.x + self.width, self.y
+
+                        #     BoxLayout:
+                        #         orientation: 'horizontal'
+                        #         spacing: "8dp"
+
+                        #         MDLabel:
+                        #             text: "Name"
+                        #             halign: 'center'
+                                
+                        #         MDLabel: 
+                        #             text: "Price"
+                        #             halign: 'center'
+                            
+                        #     Widget:
+                        #         size_hint_y: None
+                        #         height: "2dp"
+                        #         canvas:
+                        #             Color:
+                        #                 rgba: 0, 0, 0, 1
+                        #             Line:
+                        #                 points: self.x, self.y, self.x + self.width, self.y
+
+
+                        #     MDGridLayout:
+                        #         cols: 2
+                        #         spacing: "8dp"
+                        #         padding: "8dp"
+
+                        #         MDLabel:
+                        #             text: "Product 1"
+                        #             theme_text_color: "Secondary"
+                        #             halign: "center"
+                                    
+                        #         MDLabel:
+                        #             text: "Price 1"
+                        #             theme_text_color: "Primary"
+                        #             halign: "center"
+                                    
+                        #         MDLabel:
+                        #             text: "Product 2"
+                        #             theme_text_color: "Secondary"
+                        #             halign: "center"
+                                    
+                        #         MDLabel:
+                        #             text: "Price 2"
+                        #             theme_text_color: "Primary"
+                        #             halign: "center"
+
+                        #     Widget:
+                        #         size_hint_y: None
+                        #         height: "2dp"
+                        #         canvas:
+                        #             Color:
+                        #                 rgba: 0, 0, 0, 1
+                        #             Line:
+                        #                 points: self.x, self.y, self.x + self.width, self.y
+
+                        #     BoxLayout:
+                        #         orientation: 'horizontal'
+                        #         spacing: "8dp"
+
+                        #         MDLabel:
+                        #             text: "Total:"
+                        #             halign: 'center'
+
+                        #         MDLabel:
+                        #             id: "total_price"
+                        #             text: ""
+                        #             halign: 'center'

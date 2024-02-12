@@ -1,0 +1,5 @@
+Product: PyCoaching
+Project Name: final-exam-pycoaching-template
+Project Topic: VehicleShop App
+Project Version: 11.23
+Project Owner: MakerMinds LLC
